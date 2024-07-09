@@ -10,7 +10,7 @@ import { PizzaSize } from "@/types";
 
 const productDetailsScreen = () => {
   const { id } = useLocalSearchParams();
-
+  console.log('Order ID:', id);
   const router = useRouter();
 
   const {onAddItem} = useCart();
@@ -29,7 +29,7 @@ const productDetailsScreen = () => {
       return;
     } 
     onAddItem(product,selectedSize);
-    router.push("/cart");
+    router.push("/cart");  
   }
 
   return (
@@ -99,7 +99,7 @@ const styles = StyleSheet.create({
     width: 50,
     aspectRatio: 1,
     borderRadius: 25,
-    alignItems: "center",
+    alignItems: "center", 
     justifyContent: "center",
   },
   sizeText: {

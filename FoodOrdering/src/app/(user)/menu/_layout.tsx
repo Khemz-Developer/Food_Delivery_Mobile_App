@@ -11,7 +11,7 @@ export default function MenuStack() {
         <Link href="/cart" asChild>
           <Pressable>
             {({ pressed }) => (
-              <FontAwesome
+              <FontAwesome 
                 name="shopping-cart"
                 size={25}
                 color={Colors.light.tint}
