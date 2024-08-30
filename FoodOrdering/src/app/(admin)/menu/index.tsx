@@ -1,8 +1,18 @@
-import { StyleSheet , Text, View ,Image ,FlatList} from 'react-native';
+import { StyleSheet , Text, View ,Image ,FlatList, ActivityIndicator} from 'react-native';
 import ProductListItem from '@components/ProductListItem';
-import products from '@assets/data/products';
+import { useProductList } from '@/api/products';
 
 export default function MenuScreen() {
+
+  const {data:products, error ,isLoading} = useProductList();
+
+  if(isLoading){
+    return <ActivityIndicator/>
+  }
+  
+  if(error){
+    return <Text>{error.message}</Text>
+  }
   
   return (
      <View>
@@ -13,4 +23,5 @@ export default function MenuScreen() {
      </View>
   );
 }
+
 

@@ -19,7 +19,7 @@ const AuthContext = createContext<AuthData>({
   session: null,
   loading: true,
   profile: null,
-    isAdmin: false,
+  isAdmin: false,
   
 });
 

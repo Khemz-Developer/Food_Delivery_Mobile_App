@@ -9,6 +9,8 @@ import cart from './cart';
 import { useColorScheme } from '@components/useColorScheme';
 import CartProvider from '@/providers/CartProviders';
 import AuthProvider from '@/providers/AuthProvider';
+import QueryProvider from '@/providers/QueryProvider';
+
 
 export {
   // Catch any errors thrown by the Layout component.
@@ -52,7 +54,9 @@ function RootLayoutNav() {
 
   return (
     <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
+      
       <AuthProvider>
+      <QueryProvider>
       <CartProvider>
       <Stack>
         <Stack.Screen name="index" options={{ headerShown: false }} />
@@ -63,7 +67,9 @@ function RootLayoutNav() {
         
       </Stack>
       </CartProvider>
+      </QueryProvider>
       </AuthProvider>
+     
     </ThemeProvider>
   );
 }
